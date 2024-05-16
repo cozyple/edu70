@@ -1,0 +1,5 @@
+{  "serverCommandInfo":[
+      {"command":"CMD_001", "forwardCommand":"CMD_001_A"},
+      {"command":"CMD_002", "forwardCommand":"CMD_002_B"}
+   ]
+}

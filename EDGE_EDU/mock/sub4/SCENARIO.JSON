@@ -1,0 +1,228 @@
+{
+	"scenario":[
+		{
+			"no":1,
+			"description":[
+				"[1번 시나리오] Server가 CMD_002 Request 송신",
+				"  - '※ <Device 유형>에 따라 <Forward Command> 변환' TEST"
+			],
+			"send":{
+				"from":"Server",
+				"uri":"http://127.0.0.1:8010/fromServer",
+				"command":"CMD_002",
+				"targetDevice":["DEVICE_069","DEVICE_083"],
+				"param":"b6b01d75"
+			},
+			"recv":{
+				"result":["fdb685c0","d0616320"]
+			},
+			"data":[
+				{"id":"DEVICE_069", "command":"CMD_002_L", "param":"b6b01d75"},
+				{"id":"DEVICE_083", "command":"CMD_002_M", "param":"b6b01d75"}
+			]
+		},
+
+
+
+		{
+			"no":2,
+			"description":[
+				"[2번 시나리오] Server가 CMD_001 Request 송신",
+				"  - '※ 'Device로의 Request' 순차 송신' TEST"
+			],
+			"send":{
+				"from":"Server",
+				"uri":"http://127.0.0.1:8010/fromServer",
+				"command":"CMD_001",
+				"targetDevice":["DEVICE_069"],
+				"param":"fe303904"
+			},
+			"recv":{
+				"result":["f2edab99"]
+			},
+			"data":[
+				{"id":"DEVICE_069", "command":"CMD_001_X1", "param":"fe303904"},
+				{"id":"DEVICE_069", "command":"CMD_001_X2", "param":"20b95f9c"}
+			],
+			"needComplete":true,
+			"startAfter":500
+		},
+
+
+
+		{
+			"no":3,
+			"description":[
+				"[3번 시나리오] Server가 CMD_002 Request 송신",
+				"  - '※ 'Device로의 Request' 병렬 송신' TEST",
+				"  - Server로부터 2개의 Target Device(DEVICE_083, DEVICE_015)에 CMD_002 Request 수신시 병렬로 Request 송신 체크",
+				"    (3,400ms 내에 실행 완료 체크)"
+			],
+			"send":{
+				"from":"Server",
+				"uri":"http://127.0.0.1:8010/fromServer",
+				"command":"CMD_002",
+				"targetDevice":["DEVICE_083","DEVICE_015"],
+				"param":"ce3c39e1"
+			},
+			"recv":{
+				"result":["c8d4fc55","bd2321f3"]
+			},
+			"data":[
+				{"id":"DEVICE_083", "command":"CMD_002_M", "param":"ce3c39e1"},
+				{"id":"DEVICE_015", "command":"CMD_002_Q1", "param":"ce3c39e1"},
+				{"id":"DEVICE_015", "command":"CMD_002_Q2", "param":"9604d2cd"},
+				{"id":"DEVICE_015", "command":"CMD_002_Q3", "param":"dac3dcc0"}
+			],
+			"needComplete":true,
+			"startAfter":500,
+			"elapsedTime":3400
+		},
+
+
+
+		{
+			"no":4,
+			"description":[
+				"[4번 시나리오] Server가 CMD_001/CMD_002 Request 송신",
+				"  - '※ 'Device로의 Request' 병렬 송신' TEST",
+				"  - Server로부터 <병렬 처리 개수>가 2개인 동일 Target Device(DEVICE_083)에",
+				"    CMD_001/CMD_002 Request 수신시 병렬로 Request 송신 체크",
+				"    (각각 1,400ms 내에 실행 완료 체크)"
+			],
+			"send":{
+				"from":"Server",
+				"uri":"http://127.0.0.1:8010/fromServer",
+				"command":"CMD_001",
+				"targetDevice":["DEVICE_083"],
+				"param":"3b3b6747"
+			},
+			"recv":{
+				"result":["70dce7d5"]
+			},
+			"data":[
+				{"id":"DEVICE_083", "command":"CMD_001_P", "param":"3b3b6747"}
+			],
+			"needComplete":true,
+			"startAfter":500,
+			"elapsedTime":1400
+		},
+		{
+			"no":5,
+			"send":{
+				"from":"Server",
+				"uri":"http://127.0.0.1:8010/fromServer",
+				"command":"CMD_002",
+				"targetDevice":["DEVICE_083"],
+				"param":"ab466805"
+			},
+			"recv":{
+				"result":["4cce5d47"]
+			},
+			"data":[
+				{"id":"DEVICE_083", "command":"CMD_002_M", "param":"ab466805"}
+			],
+			"needComplete":false,
+			"elapsedTime":1400
+		},
+
+
+
+		{
+			"no":6,
+			"description":[
+				"[5번 시나리오] Server가 CMD_002 Request 송신",
+				"  - '※ 'Device로의 Request' 병렬 송신' TEST",
+				"  - Server로부터 <병렬 처리 개수>가 1개인 동일 Target Device(DEVICE_274)에",
+				"    CMD_001/CMD_002 Request 수신시 직렬로 Request 송신 체크"
+			],
+			"send":{
+				"from":"Server",
+				"uri":"http://127.0.0.1:8010/fromServer",
+				"command":"CMD_001",
+				"targetDevice":["DEVICE_274"],
+				"param":"5c271c1f"
+			},
+			"recv":{
+				"result":["fcdaec48"]
+			},
+			"data":[
+				{"id":"DEVICE_274", "command":"CMD_001_H", "param":"5c271c1f"}
+			],
+			"needComplete":true,
+			"startAfter":500
+		},
+		{
+			"no":7,
+			"send":{
+				"from":"Server",
+				"uri":"http://127.0.0.1:8010/fromServer",
+				"command":"CMD_002",
+				"targetDevice":["DEVICE_274"],
+				"param":"b495fc66"
+			},
+			"recv":{
+				"result":["f51dcdae"]
+			},
+			"data":[
+				{"id":"DEVICE_274", "command":"CMD_002_U", "param":"b495fc66"}
+			],
+			"needComplete":false
+		},
+
+
+
+
+		{
+			"no":8,
+			"description":[
+				"[6번 시나리오] Server가 CMD_002 Request 송신",
+				"  - '※ 'Device로의 Request' 병렬 송신' TEST",
+				"  - Server로부터 2개의 Target Device(DEVICE_083, DEVICE_015)에",
+				"    500ms 간격으로 CMD_002 Request 수신시 병렬로 Request 송신 체크 (문제지 17P 참고)",
+				"    (첫번째 Request는 3,400ms, 두번째 Request는 3,900ms 내에 실행 완료 체크)"
+			],
+			"send":{
+				"from":"Server",
+				"uri":"http://127.0.0.1:8010/fromServer",
+				"command":"CMD_002",
+				"targetDevice":["DEVICE_083","DEVICE_015"],
+				"param":"5c271c1f"
+			},
+			"recv":{
+				"result":["40aaa6ba","e15c050f"]
+			},
+			"data":[
+				{"id":"DEVICE_083", "command":"CMD_002_M", "param":"5c271c1f"},
+				{"id":"DEVICE_015", "command":"CMD_002_Q1", "param":"5c271c1f"},
+				{"id":"DEVICE_015", "command":"CMD_002_Q2", "param":"82dd5ccc"},
+				{"id":"DEVICE_015", "command":"CMD_002_Q3", "param":"2fd0b2d9"}
+			],
+			"needComplete":true,
+			"startAfter":2000,
+			"elapsedTime":3400
+		},
+		{
+			"no":9,
+			"send":{
+				"from":"Server",
+				"uri":"http://127.0.0.1:8010/fromServer",
+				"command":"CMD_002",
+				"targetDevice":["DEVICE_083","DEVICE_015"],
+				"param":"b495fc66"
+			},
+			"recv":{
+				"result":["1cfa0320","efff3fba"]
+			},
+			"data":[
+				{"id":"DEVICE_083", "command":"CMD_002_M", "param":"b495fc66"},
+				{"id":"DEVICE_015", "command":"CMD_002_Q1", "param":"b495fc66"},
+				{"id":"DEVICE_015", "command":"CMD_002_Q2", "param":"7c7125d8"},
+				{"id":"DEVICE_015", "command":"CMD_002_Q3", "param":"b294e929"}
+			],
+			"needComplete":false,
+			"startAfter":500,
+			"elapsedTime":3900
+		}
+	]
+}

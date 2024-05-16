@@ -1,0 +1,27 @@
+1682240900665	Delete element
+1682240956156	Delete element
+1682241308895	Move compilation unit
+1682243380122	Rename type 'CommandInfo'
+1682244834247	Move compilation units
+1682250462619	Rename method 'startDevices'
+1682250470992	Rename method 'getDeviceServers'
+1682250611076	Rename method 'getDeviceServer'
+1682250651366	Rename method 'createDeviceServer'
+1682250918192	Rename method 'createServer'
+1682258178620	Delete element
+1682333239547	Rename type 'MyServlet'
+1682334811226	Rename local variable 'req'
+1682334820750	Rename local variable 'res'
+1682410070365	Copy compilation unit
+1682410096322	Rename type 'CommandInfoData'
+1682419863410	Delete element
+1682421509689	Copy file
+1682423398273	Copy folder
+1682423464064	Copy file
+1682423484511	Copy folder
+1682423496368	Copy packages
+1682727195035	Copy file
+1682728327873	Delete element
+1682728332084	Delete element
+1682728336698	Delete elements
+1682728435750	Copy file

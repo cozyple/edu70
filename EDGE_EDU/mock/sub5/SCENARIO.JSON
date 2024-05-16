@@ -1,0 +1,37 @@
+{
+	"scenario":[
+		{
+			"no":1,
+			"description":["[1번 시나리오] Device(DEVICE_069)가 CMD_003 Request 송신"],
+			"send":{
+				"from":"DEVICE_069",
+				"uri":"http://127.0.0.1:8010/fromDevice",
+				"command":"CMD_003",
+				"param":"a7b248f5"
+			},
+			"recv":{
+			},
+			"data":[
+			],
+			"needComplete":true,
+			"startAfter":500
+		},
+		{
+			"no":2,
+			"description":["[2번 시나리오] Device(DEVICE_069)가 CMD_004 Request 송신"],
+			"send":{
+				"from":"DEVICE_083",
+				"uri":"http://127.0.0.1:8010/fromDevice",
+				"command":"CMD_004",
+				"param":"db538d30"
+			},
+			"recv":{
+			},
+			"data":[
+				{"id":"Server", "command":"CMD_004_T", "param":"3815fb04"}
+			],
+			"needComplete":true,
+			"startAfter":500
+		}
+	]
+}

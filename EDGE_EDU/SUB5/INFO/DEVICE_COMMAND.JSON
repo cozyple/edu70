@@ -1,0 +1,11 @@
+{  "deviceCommandInfo":[
+      {  "command":"CMD_003",
+         "forwardCommand":"CMD_003_S",
+         "computingLib":"LIB115"
+      },
+      {  "command":"CMD_004",
+         "forwardCommand":"CMD_004_T",
+         "computingLib":"LIB305"
+      }
+   ]
+}

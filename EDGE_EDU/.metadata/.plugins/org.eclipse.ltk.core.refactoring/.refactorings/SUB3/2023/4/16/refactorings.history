@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;MOCK.BAT&apos; to &apos;SUB2&apos;&#x0D;&#x0A;- Original project: &apos;SUB3&apos;&#x0D;&#x0A;- Destination element: &apos;SUB2&apos;&#x0D;&#x0A;- Original element: &apos;MOCK.BAT&apos;" description="Copy file" destination="=SUB2" element1="MOCK.BAT" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1682148883098" units="0" version="1.0"/>
+</session>

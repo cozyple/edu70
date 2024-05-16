@@ -1,0 +1,6 @@
+{  "deviceInfo":[
+      {"device":"DEVICE_069", "hostname":"127.0.0.1", "port":9010},
+      {"device":"DEVICE_083", "hostname":"127.0.0.1", "port":9020},
+      {"device":"DEVICE_015", "hostname":"127.0.0.1", "port":9030}
+   ]
+}

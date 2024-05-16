@@ -1,0 +1,9 @@
+C:\>SP_TEST<엔터키>
+CMD_001#DEVICE_069#fe303904<엔터키>
+20b95f9c
+C:\>
+
+C:\>SP_TEST<엔터키>
+CMD_002#DEVICE_083,DEVICE_015#ce3c39e1<엔터키>
+c8d4fc55,9604d2cd
+C:\>

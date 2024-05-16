@@ -1,0 +1,39 @@
+{
+	"scenario":[
+		{
+			"no":1,
+			"description":["[1번 시나리오] Server가 CMD_001 Request 송신"],
+			"send":{
+				"from":"Server",
+				"uri":"http://127.0.0.1:8010/fromServer",
+				"command":"CMD_001",
+				"targetDevice":["DEVICE_069"],
+				"param":"fe303904"
+			},
+			"recv":{
+				"result":["20b95f9c"]
+			},
+			"data":[
+				{"id":"DEVICE_069", "command":"CMD_001_A", "param":"fe303904"}
+			]
+		},
+		{
+			"no":2,
+			"description":["[2번 시나리오] Server가 CMD_002 Request 송신"],
+			"send":{
+				"from":"Server",
+				"uri":"http://127.0.0.1:8010/fromServer",
+				"command":"CMD_002",
+				"targetDevice":["DEVICE_083","DEVICE_015"],
+				"param":"ce3c39e1"
+			},
+			"recv":{
+				"result":["c8d4fc55","9604d2cd"]
+			},
+			"data":[
+				{"id":"DEVICE_083", "command":"CMD_002_B", "param":"ce3c39e1"},
+				{"id":"DEVICE_015", "command":"CMD_002_B", "param":"ce3c39e1"}
+			]
+		}
+	]
+}

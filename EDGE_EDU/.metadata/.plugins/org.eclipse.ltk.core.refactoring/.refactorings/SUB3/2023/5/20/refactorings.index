@@ -1,0 +1,16 @@
+1684057981369	Rename resource 'COMMAND.JSON'
+1684058978989	Rename type 'CommandInfoData'
+1684059106724	Rename type 'CommandInfo'
+1684059126119	Rename field 'commandInfoList'
+1684059133266	Rename method 'getCommandInfoList'
+1684059396376	Rename type 'ServerServlet'
+1684059560678	Rename type 'CommandRequest'
+1684059570322	Rename type 'CommandResponse'
+1684059600187	Delete element
+1684059648195	Rename local variable 'commandRequest'
+1684059755641	Rename local variable 'tempDevice'
+1684062634288	Move compilation units
+1684062639287	Delete element
+1684062769574	Copy compilation units
+1684155729298	Delete elements
+1684155733142	Delete elements

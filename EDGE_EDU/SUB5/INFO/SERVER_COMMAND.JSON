@@ -1,0 +1,19 @@
+{  "serverCommandInfo":[
+      {  "command":"CMD_001",
+         "forwardCommandInfo":[
+            {"type":"DEVICE_A", "forwardCommand":["CMD_001_X1","CMD_001_X2"]},
+            {"type":"DEVICE_B", "forwardCommand":["CMD_001_P"]},
+            {"type":"DEVICE_C", "forwardCommand":["CMD_001_W"]},
+            {"type":"DEVICE_D", "forwardCommand":["CMD_001_H"]}
+         ]
+      },
+      {  "command":"CMD_002",
+         "forwardCommandInfo":[
+            {"type":"DEVICE_A", "forwardCommand":["CMD_002_L"]},
+            {"type":"DEVICE_B", "forwardCommand":["CMD_002_M"]},
+            {"type":"DEVICE_C", "forwardCommand":["CMD_002_Q1","CMD_002_Q2","CMD_002_Q3"]},
+            {"type":"DEVICE_D", "forwardCommand":["CMD_002_U"]}
+         ]
+      }
+   ]
+}
